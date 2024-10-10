@@ -7,13 +7,9 @@ elif d1 == d2 or d1 == d3 :
 elif d2 == d3 :
     print(1000 + (d2 * 100))
 else:
-    if d1 <= d2:
-        if d2 <= d3:
-            print(d3*100)
-        else :
-            print(d2*100)
+    if d1 >= d2 and d1 >= d3:
+        print(d1 * 100)
+    elif d2 >= d1 and d2 >= d3:
+        print(d2 * 100)
     else:
-        if d1 <= d3:
-            print(d3*100)
-        else:
-            print(d1*100)
+        print(d3 * 100)
