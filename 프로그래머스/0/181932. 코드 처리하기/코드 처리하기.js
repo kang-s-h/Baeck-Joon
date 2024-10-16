@@ -7,13 +7,13 @@ function solution(code) {
         if(word == 1 || word == 0){
             mode = 1;
         }else {
-            if(index % 2 == 0 && word !== 0 && word !== 1) array.push(word);
+            if(index % 2 == 0) array.push(word);
         }
     }else{
         if(word == 0 || word == 1){
             mode = 0;
         }else{
-            if(index % 2 !== 0 && word !== 0 && word !== 1) array.push(word);  
+            if(index % 2 !== 0) array.push(word);  
         }
     }
     })
