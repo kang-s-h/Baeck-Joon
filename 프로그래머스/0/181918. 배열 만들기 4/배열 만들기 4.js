@@ -9,7 +9,7 @@ function solution(arr) {
             stk.push(arr[i]);
             i += 1;
         }else{
-            stk.pop(stk.length -1);
+            stk.pop();
         }
     }
     return stk;
