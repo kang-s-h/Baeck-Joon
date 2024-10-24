@@ -7,6 +7,6 @@ function solution(strArr) {
     strArr.forEach((str)=> {
        arr[str.length - 1] +=1;
     });
-    answer = arr.sort((a,b)=> b-a)[0];
+    answer = Math.max(...arr);
     return answer;
 }
