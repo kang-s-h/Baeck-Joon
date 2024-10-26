@@ -1,10 +1,10 @@
 function solution(order) {
     var answer = 0;
     order.forEach((ord)=> {
-        if(ord.includes("americano") || ord.includes("anything")){
-            answer +=4500;
-        }else{
+        if(ord.includes("cafelatte")){
             answer +=5000;
+        }else{
+            answer +=4500;
         }
     })
     return answer;
