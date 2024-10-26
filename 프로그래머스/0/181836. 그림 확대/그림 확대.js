@@ -1,10 +1,15 @@
 function solution(picture, k) {
     var answer = [];
     let arr1 = [];
-    picture.forEach((pic)=> {
-        arr1.push([...pic].map((dob)=> {
-            return dob = dob.repeat(k);
-        }))
+    // picture.forEach((pic)=> {
+    //     arr1.push([...pic].map((dob)=> {
+    //         return dob = dob.repeat(k);
+    //     }))
+    // })
+    arr1 = picture.map((pic)=> {
+      return pic.split("").map((str)=> {
+            return str.repeat(k);
+        })
     })
     arr1 = arr1.map((str)=> {
         return str.join("");
