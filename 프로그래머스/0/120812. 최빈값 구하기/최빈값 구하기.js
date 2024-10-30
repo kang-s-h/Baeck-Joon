@@ -7,20 +7,11 @@ function solution(array) {
     
     let setArr = Object.values(obj);
     const max = Math.max(...setArr);
-    const li = setArr.lastIndexOf(max);
     
-    let key;
-    for(const k in obj){
-        if(obj[k] === max){
-            key = k;
-            break;
-        }
+     if (setArr.indexOf(max) !== setArr.lastIndexOf(max)) {
+        return -1;
     }
-    
-    if(setArr.indexOf(max) !== li && li != -1){
-        answer = -1;
-    }else{
-        answer = +key;
-    }
+
+    answer = +Object.keys(obj).find(key => obj[key] === max);
     return answer;
 }
