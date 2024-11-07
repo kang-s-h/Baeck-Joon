@@ -26,14 +26,6 @@ function solution(keyinput, board) {
             break;
     }
     })
-    console.log(answer);
-    for(let i=0;i<2;i++){
-       if(answer[i] < 0 && answer[i] < -(board[i]-1)/2){
-           answer[i] = -(board[i]-1)/2;
-       }else if(answer[i] >= 0 && answer[i] > (board[i]-1)/2){
-           answer[i] = (board[i]-1)/2;
-       }
-           
-    }
+    
     return answer;
 }
