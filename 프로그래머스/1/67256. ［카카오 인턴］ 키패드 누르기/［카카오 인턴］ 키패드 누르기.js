@@ -25,12 +25,11 @@ function solution(numbers, hand) {
         let y = num !== 0 ? (Math.ceil(num/3)-1) : 3;
         
          let number = [x,y];
-         let numberStr = number.join("");
         
-        if((numberStr === "00") || (numberStr === "01") || (numberStr === "02")){
+        if(number[0] === 0){
             left = number;
             answer+= "L";
-        }else if((numberStr === "20") || (numberStr === "21") || (numberStr === "22"))         {
+        }else if(number[0] === 2){
             right = number;
             answer +="R";
         }else{
@@ -38,8 +37,14 @@ function solution(numbers, hand) {
             let calRight = cal(right,number);
             
             if(calLeft === calRight){
-                hand === "right" ? right = number : left = number;
-                hand === "right" ? answer += "R" : answer += "L";
+
+                if(hand === "right"){
+                    right = number;
+                    answer+= "R";
+                }else{
+                    left = number;
+                    answer+= "L";
+                }
             }else if(calLeft > calRight){
                 right = number;
                 answer+= "R";
