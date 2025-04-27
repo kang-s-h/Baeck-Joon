@@ -4,13 +4,23 @@ function solution(survey, choices) {
     let object = {
         R:0, T:0, C:0, F:0, J:0, M:0, A:0, N:0,
     };
+    let arr = ["RT","CF","JM","AN"];
     
-    const moreBigger = (kind) => {
-        if(object[kind[0]] === object[kind[1]]){
-            return kind.split("").sort()[0];
+    const moreBigger = () => {
+                
+        for(let i = 0;i<arr.length;i++){
+        let first = arr[i][0];
+        let second = arr[i][1];
+            
+        if(object[first] === object[second]){
+            answer += arr[i].split("").sort()[0];
+            continue;    
         }
-        return object[kind[0]] > object[kind[1]] ? kind[0] : kind[1];
-    }
+        answer += object[first] > object[second] ? first : second;
+    
+            }
+        
+        }
     
     survey.forEach((matter,index)=> {
         if(choices[index] < 4 ){
@@ -20,7 +30,7 @@ function solution(survey, choices) {
         }
     })
     
-    answer = moreBigger("RT") + moreBigger("CF") + moreBigger("JM") + moreBigger("AN"); 
+   moreBigger();
     
     return answer;
 }
