@@ -8,9 +8,21 @@ function solution(numbers, hand) {
         return Math.abs(currentLoc[0] - pushLoc[0]) + Math.abs(currentLoc[1] - pushLoc[1])
     }
     
+    const calX = (num) => {
+        if(num == 0){
+            return 1;
+        }
+        
+        if(num % 3 !== 0){
+            return num%3 -1; 
+        }
+        
+        return 2;
+        }
+    
     numbers.forEach((num)=> {
-        let x = num !== 0 ? (num % 3 !== 0 ? num%3 : 3) - 1 : 1;
-        let y = num !== 0 ? Math.ceil(num/3)-1 : 3;
+        let x = calX(num);
+        let y = num !== 0 ? (Math.ceil(num/3)-1) : 3;
         
          let number = [x,y];
          let numberStr = number.join("");
