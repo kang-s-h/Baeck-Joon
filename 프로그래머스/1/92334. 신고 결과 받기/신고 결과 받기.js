@@ -2,11 +2,7 @@ function solution(id_list, report, k) {
     var answer = Array(id_list.length).fill(0);
     const obj = {};
 
-    let setReport = [...new Set(report)];
-    
-    setReport = setReport.map((str)=> {
-        return [...str.split(" ")];
-    });
+    let setReport = [...new Set(report)].map((str)=> str.split(' '));
     
     setReport.forEach((arr)=> {
         obj[arr[1]] > 0 ? obj[arr[1]] +=1 : obj[arr[1]] = 1;
